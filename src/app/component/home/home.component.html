@@ -1,0 +1,22 @@
+<div class='container-fluid cp home-container'>
+  <div class='col-xs-12 cp text-center'>
+    <ng-container *ngIf="count > 0; then tplHasPendingTasks else tplHasNoPendingTasks"></ng-container>
+    <ng-template #tplHasPendingTasks>
+      You currently have <span *ngIf='!count; else countGoal'>no</span> added goals.
+      <ng-template #countGoal>
+          {{count}}
+        </ng-template>
+    </ng-template>
+    <ng-template #tplHasNoPendingTasks>
+      <h4 class="text-success">Great! You are all caught up for today</h4>
+    </ng-template>
+  </div>
+  <div class='col-xs-12 cp text-center'>
+    <button class='btn btn-secondary' (click)='navigateToTodoList()'>
+      <span *ngIf='!count; else addMore'>ADD</span>
+    </button>
+    <ng-template #addMore>
+      ADD MORE
+    </ng-template>
+  </div>
+</div>

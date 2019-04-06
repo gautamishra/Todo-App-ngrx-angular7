@@ -1,0 +1,13 @@
+<div class="col-xs-12 cp mb-2">
+  <div class="d-inline-block">
+    <button class='checkbox-btn' (click)='toggleSelected(todo?.index)'>
+      <i class='fa fa-check-square' *ngIf='todo?.isCompleted; else incomplete'></i>
+      <ng-template #incomplete>
+        <i class='fa fa-square'></i>
+      </ng-template>
+    </button>
+  </div>
+  <div  class='d-inline-block pl-2 text-content' [class.completed]="todo.isCompleted">
+    <span>{{todo.text}}</span>
+  </div>
+</div>

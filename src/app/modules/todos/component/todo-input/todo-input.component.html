@@ -1,0 +1,19 @@
+<div class='col-xs-12 mb-3'>
+  <form #f='ngForm' novalidate (submit)='addGoal(f)'>
+    <div class="input-group">
+      <input type='text'
+        name='text'
+        class="form-control"
+        placeholder='Add goals'
+        aria-label="Add goals"
+        aria-describedby="Add goals"
+        autocomplete="off"
+        ngModel
+        #text="ngModel"
+        required>
+      <div class="input-group-append">
+        <button type="submit" class="input-group-text btn-secondary">ADD</button>
+      </div>
+    </div>
+  </form>
+</div>
